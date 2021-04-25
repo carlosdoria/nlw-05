@@ -1,0 +1,155 @@
+.playerContainer {
+  height: 100vh;
+  width: 26.5rem;
+
+  padding: 3rem 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--white);
+  background-color: var(--purple-500);
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  strong {
+    font-family: Lexend, sans-serif;
+    font-weight: 600;
+  }
+
+  footer {
+    align-self: stretch;
+
+    &.empty .progress {
+      opacity: 0.5;
+    }
+  }
+}
+
+.currentEpisode {
+  text-align: center;
+  img {
+    border-radius: 1.5rem;
+  }
+
+  strong {
+    margin-top: 2rem;
+
+    display: block;
+
+    font: 600 1.25rem Lexend, sans-serif;
+    line-height: 1.75rem;
+  }
+
+  span {
+    display: block;
+
+    margin-top: 1rem;
+
+    line-height: 1.5rem;
+
+    opacity: .6;
+  }
+}
+
+.emptyPlayer {
+  height: 20rem;
+  width: 100%;
+
+  padding: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1.5px dashed var(--purple-300);
+  border-radius: 1.5rem;
+
+  background: linear-gradient(143.8deg, rgba(145, 108, 250, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  font-size: 0.875rem;
+
+  span {
+    width: 4rem;
+
+    display: inline-block;
+
+    text-align: center;
+  }
+}
+
+.slider {
+  flex: 1;
+
+  .emptySlider {
+    height: 4px;
+    width: 100%;
+
+    background: var(--purple-300);
+
+    border-radius: 2px;
+  }
+}
+
+.buttons {
+  margin-top: 2.5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  button {
+    font-size: 0;
+
+    background: transparent;
+    border: 0;
+
+    &:disabled {
+      cursor: default;
+      opacity: .5;
+    }
+
+    transition: filter .2s;
+
+    &:hover:not(:disabled) {
+      filter: brightness(.7);
+    }
+
+    &.isActive {
+      filter: invert(.35) sepia(1) saturate(3) hue-rotate(108deg);
+    }
+
+    &.isActive:hover {
+      filter: brightness(.6) invert(.35) sepia(1) saturate(3) hue-rotate(108deg);
+    }
+
+    &.playButton {
+      height: 4rem;
+      width: 4rem;
+
+      background: var(--purple-400);
+
+      border-radius: 1rem;
+
+      &:hover:not(:disabled) {
+        filter: brightness(.95);
+      }
+    }
+  }
+}
+
+
